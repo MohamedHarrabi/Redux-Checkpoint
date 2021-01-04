@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {useDispatch} from 'react-redux';
-import {addTodo,Done} from '../Redux/actionTypes';
+import {addTodo} from '../Redux/actionTypes';
 
 function TodoForm() {
 
@@ -22,7 +22,7 @@ function TodoForm() {
     dispatch(addTodo({id:Math.random(),isComplete:false,text:input}));
     setInput("");
   }
- 
+
   
 
   return (
@@ -54,10 +54,7 @@ function TodoForm() {
           <button onClick={add} className='todo-button'>
             Add todo
           </button>
-          <button onClick={()=>dispatch(Done(false))}  className='todo-button'>
-            done
-          </button>
-        
+         
 
         </>
        {/* )}  */}

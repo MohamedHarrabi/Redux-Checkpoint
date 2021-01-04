@@ -2,5 +2,5 @@ export const ADD_TODO = 'ADD_TODO';
 export const DELETE ='DELETE';
 export const COMPLETE ='COMPLETE';
 export const EDIT ='EDIT';
-export const DONE ='DONE';
-//export const NOT ='NOT';
+// export const DONE ='DONE';
+// export const NOT ='NOT';

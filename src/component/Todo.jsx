@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import TodoForm from './TodoForm';
+
 import { RiCloseCircleLine } from 'react-icons/ri';
 
 import { MdDone } from 'react-icons/md';
@@ -15,9 +15,23 @@ const Todo = () => {
  const dispatch = useDispatch()
 const del=(a)=>dispatch(Delete(a.id))
 
+const [tog, setTog] = useState(null)
+
+const toggelF =()=>{
+  setTog(false);
+}
+const toggelT = ()=>{
+  setTog(null);
+}
 
 
-  return list.map((todo, index) => (
+  return (<div>
+    
+    <button className="todo-button" onClick={toggelF}>DONE</button>
+    <button className="todo-button" onClick={toggelT}>NOT</button>
+
+    
+   { list.filter(el=>el.id !== 0 && el.isComplete !== tog).map((todo, index) => (
     <div
       className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
       key={index}
@@ -33,10 +47,12 @@ const del=(a)=>dispatch(Delete(a.id))
         
         <TodoEdit todo={todo}/>
         <MdDone onClick={()=>dispatch(Complete(todo.id))} />
+      
       </div>
     </div>
   )
-  );
+  )}
+  </div>);
 };
 
 export default Todo;

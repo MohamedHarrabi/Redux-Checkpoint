@@ -1,11 +1,11 @@
-import { ADD_TODO,  DELETE, COMPLETE, EDIT,DONE,NOT} from "../action";
+import { ADD_TODO,  DELETE, COMPLETE, EDIT} from "../action";
 
 const initialState = {
  
-  tasks: [{id:0,isComplete:false,text:"todo 1",isEdit:false},
-          {id:1,isComplete:false,text:"todo 2",isEdit:false},
-          {id:2,isComplete:true,text:"todo 3",isEdit:false},
-          {id:3,isComplete:false,text:"todo 4",isEdit:false}]
+  tasks: [{id:1,isComplete:false,text:"todo 1",isEdit:false},
+          {id:2,isComplete:false,text:"todo 2",isEdit:false},
+          {id:3,isComplete:true,text:"todo 3",isEdit:false},
+          {id:4,isComplete:false,text:"todo 4",isEdit:false}]
 };
 
 const todos = (state = initialState, action) => {
@@ -43,13 +43,15 @@ const todos = (state = initialState, action) => {
       };
 
     
-      case DONE:
-      return {
-        ...state,
-        tasks: state.tasks.filter((el, i) => el.isComplete !== action.payload)
-      };
+      // case DONE:
+      // return {
+      //   ...state,
+      //   tasks: state.tasks.filter((el, i) => el.isComplete !== action.payload)
+      // };
       // case NOT:
-      //   return { ...state, tasks:[...state.tasks,action.payload] };
+      //   return {
+      //     ...state
+      //   };
 
     default:
       return state;

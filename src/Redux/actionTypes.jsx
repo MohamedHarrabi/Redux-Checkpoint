@@ -1,4 +1,4 @@
-import {ADD_TODO,DELETE,COMPLETE,EDIT,DONE} from './action';
+import {ADD_TODO,DELETE,COMPLETE,EDIT} from './action';
 
 
 export const addTodo = (payload) => {
@@ -21,6 +21,6 @@ export const Complete =(payload) => {
 export const Edit =(payload) => {
     return {type:EDIT, payload}
 };
-export const Done =(payload) => {
-    return {type:DONE, payload}
-};
+// export const Done =(payload) => {
+//     return {type:DONE, payload}
+// };
