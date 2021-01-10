@@ -23,13 +23,16 @@ const toggelF =()=>{
 const toggelT = ()=>{
   setTog(null);
 }
+const toggelTT =()=>{
+  setTog(true);
+}
 
 
   return (<div>
     
-    <button className="todo-button" onClick={toggelF}>DONE</button>
-    <button className="todo-button" onClick={toggelT}>NOT</button>
-
+        <button className="todo-button" onClick={toggelT}>ALL</button>
+        <button className="todo-button" onClick={toggelF}>DONE</button>
+        <button className="todo-button" onClick={toggelTT}>NOT</button>
     
    { list.filter(el=>el.id !== 0 && el.isComplete !== tog).map((todo, index) => (
     <div
